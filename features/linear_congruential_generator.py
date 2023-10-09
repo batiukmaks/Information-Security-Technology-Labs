@@ -1,4 +1,5 @@
 import csv
+import os
 
 
 class LinearCongruentialGenerator:
@@ -10,8 +11,8 @@ class LinearCongruentialGenerator:
         self.last_sequence = []
         self.last_period = 0
 
-        self.output_filepath = "results.txt"
-        self.input_filepath = "example-input.csv"
+        self.output_filepath = "/Users/batiukmaks/PycharmProjects/Information-Security-Technology-Labs/results/lcg_results.txt"
+        self.input_filepath = "/Users/batiukmaks/PycharmProjects/Information-Security-Technology-Labs/features/example-input.csv"
 
         print("Welcome to Linear Congruential Generator")
         print("Default parameters are:")
@@ -155,6 +156,7 @@ class LinearCongruentialGenerator:
 
                 available_features[option - 1][1]()
                 input("Press Enter to continue...")
+                os.system("clear")
             except:
                 continue
 
@@ -163,23 +165,3 @@ def entry_point():
     while True:
         if not lcg.show_initial_options():
             return True
-
-
-
-
-# if __name__ == "__main__":
-#     length = int(input("Enter length of sequence: "))
-#
-#     sequence = generate_sequence(a, c, m, x0, length)
-#     period = get_period(sequence)
-#     print("Sequence: ", sequence)
-#     print("Period: ", period)
-#
-#     # Save results to file
-#     with open("results.txt", "w") as file:
-#         file.write("Sequence: " + str(sequence) + "\n")
-#         file.write("Period: " + str(period) + "\n")
-
-
-# Every feature is another module
-# .exe file | sh
