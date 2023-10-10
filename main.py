@@ -1,4 +1,4 @@
-from features import linear_congruential_generator as lcg
+from features.LinearCongruentialGenerator import linear_congruential_generator as lcg
 
 available_features = [
     ("Linear Congruential Generator", lcg.entry_point),

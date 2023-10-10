@@ -12,7 +12,7 @@ class LinearCongruentialGenerator:
         self.last_period = 0
 
         self.output_filepath = "/Users/batiukmaks/PycharmProjects/Information-Security-Technology-Labs/results/lcg_results.txt"
-        self.input_filepath = "/Users/batiukmaks/PycharmProjects/Information-Security-Technology-Labs/features/example-input.csv"
+        self.input_filepath = "/Users/batiukmaks/PycharmProjects/Information-Security-Technology-Labs/features/LinearCongruentialGenerator/example-input.csv"
 
         print("Welcome to Linear Congruential Generator")
         print("Default parameters are:")
