@@ -4,10 +4,10 @@ import os
 
 class LinearCongruentialGenerator:
     def __init__(self):
-        self.a = 0
+        self.a = 32
         self.c = 0
-        self.m = 0
-        self.x0 = 0
+        self.m = 1023
+        self.x0 = 2
         self.last_sequence = []
         self.last_period = 0
 
