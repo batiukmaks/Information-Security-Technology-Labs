@@ -23,32 +23,7 @@ class RC5_CBC_PADSERVICE():
         print(f"Passcode: {self.passcode}")
         print(f"Input file: {self.input_file}")
         print(f"Output file: {self.output_file}")
-        print("You can change parameters in the menu")
         print()
-
-
-    def update_params(self):
-        print("Updating parameters")
-
-        while True:
-            try:
-                new_pass = input("Enter new key: ")
-                word_size = int(input("Enter new word size: "))
-                num_rounds = int(input("Enter new number of rounds: "))
-                key = self.md5_service.hexdigest(new_pass).encode('utf-8')
-
-
-                self.key = key
-                self.word_size = word_size
-                self.num_rounds = num_rounds
-
-                service = RC5CBCPad(self.key, self.word_size, self.num_rounds)
-                self.service = service
-                break
-            except:
-                continue
-
-        print("Parameters updated successfully")
 
 
     def encrypt(self):
@@ -82,7 +57,6 @@ class RC5_CBC_PADSERVICE():
 
     def get_available_features(self):
         available_features = [
-            ("Update parameters", self.update_params),
             ("Encrypt file", self.encrypt),
             ("Decrypt file", self.decrypt),
         ]

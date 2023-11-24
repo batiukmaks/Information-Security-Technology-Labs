@@ -37,11 +37,7 @@ class RC5CBCPad:
     def _split_blocks(self, data):
         return [data[i:i + self.block_size] for i in range(0, len(data), self.block_size)]
 
-    def update_params(self, word_size, num_rounds):
-        word_size = word_size
-        num_rounds = num_rounds
-
-    def encrypt(self, plaintext, iv):
+    def encrypt(self, plaintext, iv=os.urandom(8)):
         plaintext = self._pad_data(plaintext)
         blocks = self._split_blocks(plaintext)
         ciphertext = b''

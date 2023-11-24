@@ -1,6 +1,7 @@
 from features.LinearCongruentialGenerator import linear_congruential_generator as lcg
 from features.MD5 import md5_service as md5
 from features.RC5 import rc5_service as rc5
+from features.RSA import rsa_service as rsa_encryption
 
 import os
 
@@ -8,6 +9,7 @@ available_features = [
     ("Linear Congruential Generator", lcg.entry_point),
     ("MD5", md5.entry_point),
     ("RC5-CBC-Pad", rc5.entry_point),
+    ("RSA", rsa_encryption.entry_point),
 ]
 
 def show_initial_options():
@@ -27,7 +29,8 @@ def show_initial_options():
             os.system("clear")
             print(f"Chosen option: {available_features[option - 1][0]}")
             available_features[option - 1][1]()
-        except:
+            print("after call")
+        except Exception as e:
             continue
 
 def main():
