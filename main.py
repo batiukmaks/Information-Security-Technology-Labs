@@ -2,6 +2,7 @@ from features.LinearCongruentialGenerator import linear_congruential_generator a
 from features.MD5 import md5_service as md5
 from features.RC5 import rc5_service as rc5
 from features.RSA import rsa_service as rsa_encryption
+from features.DSS import dss_service as dss
 
 import os
 
@@ -10,6 +11,7 @@ available_features = [
     ("MD5", md5.entry_point),
     ("RC5-CBC-Pad", rc5.entry_point),
     ("RSA", rsa_encryption.entry_point),
+    ("DSS", dss.entry_point),
 ]
 
 def show_initial_options():
